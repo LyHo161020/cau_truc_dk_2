@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Ứng dụng vui DoYouLoveMe</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .box {
+            background-color: #f0f2f5;
+            border-radius: 5px;
+            border: 1px solid #e6e6e6;
+            width: 50px;
+            display: inline-block;
+            height: 25px;
+            margin-left: 15px;
+            margin-top: 10px;
+        }
+
+        .select {   
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+        <div>
+            <h2>Do you love me?</h2>
+            <div class="box">
+                <div class="select" onclick="loveMe()">YES</div>
+            </div>
+            <div class="box"  onmouseover="run(this)" id="no" style="position: absolute;">
+                <div class="select" >NO</div>
+            </div>
+        </div>
+        <script>
+            function init(){
+                let obj=document.getElementById('no');
+                obj.style.position="relative";
+                obj.style.left="0px";
+                obj.style.top='0px';
+            }
+
+            function loveMe() {
+                alert('<3');
+            }
+
+            function run(that) {
+                   that.style.left=parseInt(that.style.left) + 100*Math.random() +'px';
+                   that.style.top=parseInt(that.style.top) + 100*Math.random() +'px';
+            }
+
+            window.onload =init();
+        </script>
+</body>
+</html>

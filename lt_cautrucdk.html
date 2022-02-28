@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="submit" value="bài 1" onclick="bai1()">
+    <input type="submit" value="bài 2" onclick="bai2()">
+    <input type="submit" value="bài 3" onclick="bai3()">
+    <input type="submit" value="bài 4" onclick="bai4()">
+    <input type="submit" value="bài 5" onclick="bai5()">
+    <input type="submit" value="bài 6" onclick="bai6()">
+    <input type="submit" value="bài 7" onclick="bai7()">
+    <script>
+        function bai1() {
+            let number1 = Number(prompt("Nhap a:"));
+            let number2 = Number(prompt("Nhap b:"));
+            if (number1 % number2 == 0)
+                alert("a chia het cho b");
+            else alert("a khong chia het cho b");
+        }
+
+        function bai2() {
+            let age = Number(prompt("Nhap tuoi:"));
+            if (age < 15)
+                alert('Chua du tuoi de vao lop 10');
+        }
+
+        function bai3() {
+            let number = Number(prompt("Nhap so bat ki:"));
+            result = (number > 0) ? 'so lon hon 0' : (number < 0) ? "so nho hon 0" : "So 0";
+            alert(result);
+        }
+
+        function bai4() {
+            let number1 = Number(prompt("Nhap so thu 1:"));
+            let number2 = Number(prompt("Nhap so thu 2:"));
+            let number3 = Number(prompt("Nhap so thu 3:"));
+            // max=number1;
+            // if(number1>number2 && number1>number3)
+            //             max= number1;
+            // else if (number2>number3)
+            //             max= number2;
+            //      else max= number3;
+            // alert(max);
+            result = (number1 > number2 && number1 > number3) ? number1 : (number2 > number3) ? number2 : number3;
+            alert(result);
+        }
+
+        function bai5() {
+            let test15p = Number(prompt("Nhập  điểm bài kiểm tra 15p:"));
+            let midExam = Number(prompt("Nhập điểm bài kiểm tra giữa kì:"));
+            let finalExam = Number(prompt("Nhập điểm bài kiểm tra cuối kì:"));
+            ave = (test15p + midExam * 2 + finalExam * 3) / 6
+            result = (ave >= 8) ? "Học sinh giỏi" : (ave >= 6.5) ? "Học sinh khá" : (ave >= 5) ? 'Học sinh trung binh' : "Học sinh yếu";
+            alert(result);
+        }
+
+        function bai6() {
+            let billMoney = Number(prompt("Nhập tổng số tiền của đơn:(đơn vị nghìn đồng"));
+            let groupMoney1 = Number(prompt("Số tiền tối đa trong khoảng chia hoa hồng đầu tiên:"))
+            let percenRoses1 = Number(prompt("Nhập phần trăm hoa hồng cho mức này:"))
+            let groupMoney2 = Number(prompt("Số tiền tối đa trong khoảng chia hoa hồng thứ 2:"))
+            let percenRoses2 = Number(prompt("Nhập phần trăm hoa hồng cho mức này:"))
+            let percenRoses3 = Number(prompt("Nhập phần trăm hoa hồng cho mức >"+ groupMoney2))
+            result = (billMoney <= groupMoney1) ?(billMoney * percenRoses1) : (billMoney <= groupMoney2) ? (groupMoney1 * percenRoses1 + (billMoney - groupMoney1) * percenRoses2) :(percenRoses1 * groupMoney1 + percenRoses2 * (groupMoney2-groupMoney1) + percenRoses3 * (billMoney - groupMoney2));
+            alert("Tổng số tiền hoa hồng của đơn này là:"+" "+result+ "  " + "nghìn VND");
+        }
+
+        function bai7() {
+            let sophut = Number(prompt("Nhập tổng số phút gọi trong thang:"));
+            if(sophut>200)
+                  result=(sophut-200)*200+150*400+50*600;
+            else if(sophut>50)
+                  result=(sophut-50)*400+50*600;
+                 else result=sophut*600;
+            alert(result);
+
+        }
+       
+
+    </script>
+</body>
+
+</html>

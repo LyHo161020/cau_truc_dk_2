@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[*Bài tập] Luyện tập cấu trúc điều kiện 02</title>
+</head>
+
+<body>
+    <input type="submit" value="bài 1" onclick="bai1()">
+    <input type="submit" value="bài 2" onclick="bai2()">
+    <input type="submit" value="bài 3" onclick="bai3()">
+    <input type="submit" value="bài 4" onclick="bai4()">
+    <input type="submit" value="bài 5" onclick="bai5()">
+    <input type="submit" value="bài 6" onclick="bai6()">
+    <input type="submit" value="bài 7" onclick="bai7()">
+    <input type="submit" value="bài 8" onclick="bai8()">
+    <input type="submit" value="bài 9" onclick="bai9()">
+    <input type="submit" value="bài 10" onclick="bai10()">
+    <input type="submit" value="bài 11" onclick="bai11()">
+    <input type="submit" value="bài 12" onclick="bai12()">
+
+
+    <script>
+        function bai1() {
+            let tempC = Number(prompt("Nhap nhiet do(oC):"))
+            tempF = tempC * 9 / 5 + 32;
+            alert("Nhiet độ sau khi đổi qua độ F là:" + tempF + "oF");
+        }
+
+        function bai2() {
+            let meters = Number(prompt("Nhập độ dài (đơn vị m):"))
+            ft = meters * 3.2808;
+            alert("Độ dài sau khi đổi qua đơn vị feet:" + ft + " " + "ft");
+        }
+
+        function bai3() {
+            let edge = Number(prompt("Nhập độ dài cạnh hình vuông:"))
+            s = edge * edge;
+            alert("Diện tích hình vuông đó là:" + s);
+        }
+
+        function bai4() {
+            let width = Number(prompt("Nhập chiều dài hcn:"));
+            let height = Number(prompt("Nhập chiều rộng hcn:"));
+            s = (width * height);
+            alert("Diện tích hình cn đó là:" + s);
+        }
+
+        function bai5() {
+            let edge1 = Number(prompt("Nhập độ dài cạnh kề thứ 1 của tam giác vuông:"));
+            let edge2 = Number(prompt("Nhập độ dài cạnh kề thứ 2 của tam giác vuông:"));
+            s = 1 / 2 * edge1 * edge2;
+            alert("Diện tích tam giác đó là:" + s);
+        }
+
+        function bai6() {
+            let value1 = Number(prompt("Nhập a:"));
+            let value2 = Number(prompt("Nhập b:"));
+            if (value1 == 0)
+                if (value2 == 0)
+                    alert("PT có vô số nghiệm");
+                else alert("PT vô nghiệm");
+            else alert("PT có nghiệm là:" + -value2 * value1);
+        }
+
+        function bai7() {
+            let a = Number(prompt("Nhập a:"));
+            let b = Number(prompt("Nhập b:"));
+            let c = Number(prompt("Nhập c:"));
+
+            if (a == 0)
+                if (b == 0)
+                    if (c == 0)
+                        alert("PT có vô số nghiệm");    
+                    else
+                        alert("Pt vô nghiệm")
+                else alert("PT có nghiệm là:" + -c / b);
+            else {
+                delta = b*b - 4*a*c;
+                if (delta > 0) {
+                    console.log(delta);
+                    alert("Pt có 2 nghiệm phân biệt: x1=" + " " + (-b + Math.sqrt(delta)) / (2 * a) + "    " +"x2=" + " "+ (-b - Math.sqrt(delta)) / (2 * a)) ;
+                }
+                    else if (delta<0)
+                          alert("Pt vô nghiệm");
+                     else alert('PT có 1 nghiệm kép: x=' +" "+ -b/2*a);
+            }
+        }   
+
+        function bai8() {
+            let value1 = Number(prompt("Nhập số bất kì:"));
+            if (0<value1<120)
+                    alert("đây là tuổi của 1 người");    
+            else alert("day khong phai la tuoi cua 1 nguoi");
+        }
+
+        function bai9() {
+            let a = Number(prompt("Nhập a:"));
+            let b = Number(prompt("Nhập b:"));
+            let c = Number(prompt("Nhập c:"));
+
+           if (a>0 && b>0 && c>0)  {
+                    if (a+b>c && a+c>b && b+c>a) {
+                            alert("day la 3 canh cua 1 tam giac"); }
+                    else {
+                            alert("day ko phai la 3 canh cua 1 tam giac"); 
+                        }
+                    }
+            else alert("day ko phai la 3 canh cua 1 tam giac");
+            }
+
+        
+        function bai10() {
+            let electricityPrice = Number(prompt("Nhập số điện dùng mỗi tháng:"));
+            if (0<electricityPrice<=50) {
+                alert(`So tien dien can tra trong thang:${electricityPrice*1.678}`);
+            }
+            else if(51<electricityPrice<=100)
+                alert(`So tien dien can tra trong thang:${50*1.678+(electricityPrice-50)*1.734}`);
+            else if (101<electricityPrice<=200)
+                alert(`So tien dien can tra trong thang:${50*(1.678+1.734)+(electricityPrice-100)*2.014}`);
+            else if (201<electricityPrice<=300)
+                alert(`So tien dien can tra trong thang:${50*(1.678+1.734)+100*2.014+(electricityPrice-200)*2.536}`);
+            else if (301<electricityPrice<=400)
+                alert(`So tien dien can tra trong thang:${50*(1.678+1.734)+100*(2.014+2.536)+(electricityPrice-300)*2.834}`);   
+            else if (electricityPrice>400)          
+                alert(`So tien dien can tra trong thang:${50*(1.678+1.734)+100*(2.014+2.536+2.834)+(electricityPrice-400)*2.927}`);   
+        }
+
+        function bai11() {
+            let wage = Number(prompt("Nhập lương tháng này:"));
+            if(wage<=4000)
+                    alert(`So tien thue phai nop la: ${0}`);
+            else if (wage<=6000)
+                     alert(`So tien thue phai nop la: ${wage*0.05}`);
+            else if (wage<=9000)
+                    alert(`So tien thue phai nop la: ${6000*0.05+(wage-6000)*0.1}`);
+            else if (wage<=14000)
+                    alert(`So tien thue phai nop la: ${6000*0.05+(3000)*0.1+(wage-9000)*0.15}`);
+            else if (wage>14000)
+                    alert(`So tien thue phai nop la: ${6000*0.05+(3000)*0.1+(5000)*0.15+(wage-14)*0.2}`);
+        }
+
+        function bai12() {
+            let loan = Number(prompt("Nhập số vay:"));
+            let month = Number(prompt("Nhập số tháng vay:"));
+            let interest = Number(prompt("Nhập lãi hàng tháng:"));
+            let sotienlai= loan*interest/month;
+            alert(sotienlai);
+        }
+
+
+    </script>
+</body>
+
+</html>
